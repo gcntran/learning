@@ -96,9 +96,7 @@ return (
       </section>
   </main>
   
-  <Footer>
-    <p className="footer__text">Contact me at contact@mywebsite.com</p>
-  </Footer>
+  <Footer message="Contact me at contact@mywebsite.com" />
   </>
 )
 }
