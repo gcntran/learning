@@ -12,7 +12,7 @@ export function TodoList(props) {
                 </li>
             ))}
         </ul>
-        <button>Remove Completed</button>
+        <button>Delete</button>
         </div>
     );
 }

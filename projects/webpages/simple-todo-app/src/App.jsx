@@ -14,7 +14,20 @@ function App() {
 return (
   <div>
   <Header title="Welcome to My Website" message="Thanks for visiting my site." />
-  
+    
+    <section>
+      <form id="todo-form">
+        <input 
+          type="text" 
+          name="title" 
+          placeholder="Enter your task here"
+          autoComplete='off' 
+          required 
+        />
+        <button className="todo-form__button" type="submit">Add Task</button>
+    </form>
+    </section>
+
   <TodoList 
         todos={[
           { id: 1, text: " Complete React assignment", completed: false },
