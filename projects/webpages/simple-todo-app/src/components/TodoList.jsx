@@ -1,7 +1,7 @@
 import '../styles/TodoList.css';
 
 // Add a TodoList component that displays a list of todo items
-function TodoList(props) {
+export function TodoList(props) {
     // Loop through the todos and create list items
     const items = [];
     for (let i = 0; i < props.todos.length; i++) {
