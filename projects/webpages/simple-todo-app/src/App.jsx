@@ -26,7 +26,7 @@ function App() {
   // If there are todos, map them to list items
   else {
     listContent = todos.map((todo, i) => {
-      return
+      return (
         <li key={"todo-" + i} className="todo-item">
           <input 
             type="checkbox" 
@@ -40,6 +40,7 @@ function App() {
             {todo.name}
             </label>
         </li>
+      );
   })
 }
 
@@ -50,7 +51,7 @@ function handleFormSubmit(event) {
   // Create a new todo object
   const newTodo = {
     name: title,
-    completed: false
+    completed: true
   };
   // Update the todos state
   setTodos([...todos, newTodo]);
@@ -76,9 +77,20 @@ return (
         <button className="todo-form__button" type="submit">Add Task</button>
     </form>
     </section>
+
+    <section>
+      <h2>My Tasks:</h2>
+      <ul className="todo-list" id="todo-list">
+        {listContent}
+      </ul>
+      </section>
   </main>
   
+  <Footer>
+    <p className="footer__text">Copyright © 2025 My Website. All rights reserved.</p>
+  
+  </Footer>
   </>
 )
-
+}
 export default App
