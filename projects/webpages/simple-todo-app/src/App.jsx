@@ -27,7 +27,7 @@ return (
         title="My Card Title" 
         subtitle="My Card Subtitle" 
         content="This is the content of my card." 
-        image="https://example.com/my-image.jpg" 
+        image="src/assets/react.svg" 
       />
   
   <Footer message="Contact me at contact@mywebsite.com" />
