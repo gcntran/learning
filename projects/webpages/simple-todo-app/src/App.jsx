@@ -9,33 +9,40 @@ import { Footer } from "./components/Footer.jsx";
 import { TodoList } from "./components/TodoList.jsx";
 import { Card } from "./components/Card.jsx";
 
+// Define state and App component to have a dynamic app
 function App() {
-  const [count, setCount] = useState(0)
+  const [todos, setTodos] = useState([]);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  // todos is an empty list first []
+  // Then we add something to the list
+  // The UI will change based on the useState (dynamic)
+  let listContent = <></>; 
+
+  // If there are no todos, show a message
+  if (todos.length === 0) {
+    listContent = <p>No tasks yet. Add your task first!</p>;
+  }
+
+  // If there are todos, map them to list items
+  else {
+    listContent = todos.map((todo, i) => {
+      return
+        <li key={"todo-" + i} className="todo-item">
+          <input 
+            type="checkbox" 
+            checked={todo.completed} 
+            data-id={i} 
+            id={"todo-" + i}
+          />
+          <label 
+          htmlFor={"todo-" + i}
+          className="todo-item__label">
+            {todo.name}
+            </label>
+        </li>
+  })
 }
+
+
 
 export default App
