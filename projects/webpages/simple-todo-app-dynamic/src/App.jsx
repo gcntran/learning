@@ -9,104 +9,79 @@ import { Footer } from "./components/Footer.jsx";
 import { TodoList } from "./components/TodoList.jsx";
 import { Card } from "./components/Card.jsx";
 
-// Define state and App component to have a dynamic app
 function App() {
   const [todos, setTodos] = useState([]);
 
-  // todos is an empty list first []
-  // Then we add something to the list
-  // The UI will change based on the useState (dynamic)
-  let listContent = <></>; 
-
-  // If there are no todos, show a message
-  if (todos.length === 0) {
-    listContent = <p>No tasks yet. Add your task first!</p>;
+  // Add new task
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    const title = event.target.title.value;
+    const newTodo = { name: title, completed: false };
+    setTodos([...todos, newTodo]);
+    event.target.reset();
   }
 
-  // If there are todos, map them to list items
-  else {
-    listContent = todos.map((todo, i) => {
-      return (
-        <li key={"todo-" + i} className="todo-item">
-          <input 
-            type="checkbox" 
-            checked={todo.completed} 
-            data-id={i} 
-            id={"todo-" + i}
-            onChange={() => toggleTodo(i)}
-            // 
-            readOnly
+  // Toggle completed state
+  function toggleTodo(index) {
+    const updatedTodos = [...todos];
+    updatedTodos[index].completed = !updatedTodos[index].completed;
+    setTodos(updatedTodos);
+  }
+
+  // Delete all completed tasks
+  function deleteCompleted() {
+    setTodos(todos.filter(todo => !todo.completed));
+  }
+
+  return (
+    <>
+      <Header title="Welcome to My Website" message="Thanks for visiting" />
+
+      <main>
+        {/* Add Task Form */}
+        <section>
+          <form id="todo-form" onSubmit={handleFormSubmit}>
+            <input
+              type="text"
+              name="title"
+              placeholder="Enter your task here"
+              autoComplete="off"
+              required
+            />
+            <button className="todo-form__button" type="submit">
+              Add Task
+            </button>
+          </form>
+        </section>
+
+        {/* Todo List Section */}
+        <section>
+          <h2>My Tasks:</h2>
+          <TodoList
+            todos={todos}
+            onToggle={toggleTodo}
+            onDelete={deleteCompleted}
           />
-          <label 
-          htmlFor={"todo-" + i}
-          className="todo-item__label">
-            {todo.name}
-            </label>
-        </li>
-      );
-  })
+        </section>
+
+        {/* Card shows every task */}
+        <section>
+          <h2>Task Cards:</h2>
+          {todos.map((todo, i) => (
+            <Card
+              key={i}
+              title={`Task #${i + 1}`}
+              subtitle={todo.completed ? "Completed" : "Pending"}
+              content={todo.name}
+              image="src/assets/react.svg"
+            />
+          ))}
+        </section>
+      </main>
+
+      <Footer message="Contact me at contact@mywebsite.com" />
+    </>
+  );
 }
 
-// Handlers for adding todos
-function handleFormSubmit(event) {
-  event.preventDefault()
-  const title = event.target.title.value;
-  // Create a new todo object
-  const newTodo = {
-    name: title,
-    completed: false
-  };
-  // Update the todos state
-  setTodos([...todos, newTodo]);
-
-  // Reset the input field
-  event.target.reset();
-}
-
-// Check and uncheck todos
-function toggleTodo(index) {
-  const updatedTodos = [...todos];
-  updatedTodos[index].completed = !updatedTodos[index].completed;
-  setTodos(updatedTodos);
-}
-
-return (
-  <>
-  <Header title="Welcome to My Website" message="Thanks for visiting"/>
-  
-  <main>
-    <section>
-      <form id="todo-form" onSubmit={handleFormSubmit}>
-        <input 
-          type="text" 
-          name="title" 
-          placeholder="Enter your task here"
-          autoComplete='off' 
-          required 
-        />
-        <button className="todo-form__button" type="submit">Add Task</button>
-    </form>
-    </section>
-
-    <section>
-      <h2>My Tasks:</h2>
-      <ul className="todo-list" id="todo-list">
-        {listContent}
-      </ul>
-      
-      </section>
-
-      <Card 
-        title="My Card Title" 
-        subtitle="My Card Subtitle" 
-        content="This is the content of my card." 
-        image="src/assets/react.svg" 
-      />
-
-  </main>
-  
-  <Footer message="Contact me at contact@mywebsite.com" />
-  </>
-)
-}
-export default App
+export default App;

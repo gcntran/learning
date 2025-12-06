@@ -1,24 +1,24 @@
 import '../styles/TodoList.css';
 
 // Add a TodoList component that displays a list of todo items
-export function TodoList(props) {
-    // Loop through the todos and create list items
-    const items = [];
-    for (let i = 0; i < props.todos.length; i++) {
-        items.push(
-            <li key={i}>
-            <input 
+export function TodoList({ todos, onToggle, onDelete }) {
+    const items = todos.map((todo, i) => (
+        <li key={i} className="todo-item">
+            <input
                 type="checkbox"
-                checked={props.todos[i].completed}/>
-            <span>{props.todos[i].text}</span>
-            </li>
-        )
-        
-    // Return the list of items and a button to remove completed items
-    return (<>
-    <ul>
-        {items}
-    </ul>
-    <button>Delete</button>
-    </>)
-}}
+                checked={todo.completed}
+                onChange={() => onToggle(i)}   // toggle handler from App.jsx
+            />
+            <span>{todo.name}</span>
+        </li>
+    ));
+
+    return (
+        <>
+            <ul className="todo-list" id="todo-list">
+                {items}
+            </ul>
+            <button onClick={onDelete}>Delete Completed</button>
+        </>
+    );
+}
