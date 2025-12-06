@@ -93,7 +93,16 @@ return (
       <ul className="todo-list" id="todo-list">
         {listContent}
       </ul>
+      
       </section>
+
+      <Card 
+        title="My Card Title" 
+        subtitle="My Card Subtitle" 
+        content="This is the content of my card." 
+        image="src/assets/react.svg" 
+      />
+
   </main>
   
   <Footer message="Contact me at contact@mywebsite.com" />

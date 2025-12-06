@@ -19,6 +19,6 @@ export function TodoList(props) {
     <ul>
         {items}
     </ul>
-    <button>Remove Completed</button>
+    <button>Delete</button>
     </>)
 }}
