@@ -65,7 +65,7 @@ function App() {
         </section>
 
         {/* Card shows every task */}
-        <section>
+        <section className="cards">
           <h2>Task Cards:</h2>
           {todos.map((todo, i) => (
             <Card

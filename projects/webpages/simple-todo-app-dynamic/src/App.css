@@ -39,10 +39,15 @@
   }
 }
 
-.card {
-  padding: 2em;
+.cards {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  gap: 2em;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.read-the-docs {
-  color: #888;
+.card {
+  padding: 2em;
 }
