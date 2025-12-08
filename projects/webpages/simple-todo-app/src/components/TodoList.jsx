@@ -4,15 +4,15 @@ import '../styles/TodoList.css';
 export function TodoList(props) {
     return (
         <div>
-        <ul>
-            {props.todos.map(todo => (
-                <li key={todo.id}>
-                    <input type="checkbox" checked={todo.completed} readOnly />
-                    {todo.text}
-                </li>
-            ))}
-        </ul>
-        <button>Delete</button>
+            <ul>
+                {props.todos.map(todo => (
+                    <li key={todo.id}>
+                        <input type="checkbox" checked={todo.completed} readOnly />
+                        {todo.text}
+                    </li>
+                ))}
+            </ul>
+            <button>Delete</button>
         </div>
     );
 }

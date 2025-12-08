@@ -4,10 +4,10 @@ import '../styles/Card.css';
 export function Card(props) {
     return (
         <div className="card">
-        <h2>{props.title}</h2>
-        <h3>{props.subtitle}</h3>
-        <p>{props.content}</p>
-        <img src={props.image} alt={props.title}></img>
+            <h2>{props.title}</h2>
+            <h3>{props.subtitle}</h3>
+            <p>{props.content}</p>
+            <img src={props.image} alt={props.title}></img>
         </div>
     )
 }

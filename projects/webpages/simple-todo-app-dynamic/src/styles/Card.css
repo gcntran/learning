@@ -4,14 +4,13 @@
     margin: 20px;
     padding: 10px;
     border-radius: 5px;
-    }
-    
-    .content {
-        background-color: black;
-        color: white;
-    }
-    
-    h2 {
-        border-bottom: solid #256688 1px;
-    }
-    
+}
+
+.content {
+    background-color: black;
+    color: white;
+}
+
+h2 {
+    border-bottom: solid #256688 1px;
+}

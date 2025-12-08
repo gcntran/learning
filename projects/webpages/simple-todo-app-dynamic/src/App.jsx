@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 // Import components
@@ -38,7 +36,7 @@ function App() {
       <Header title="Welcome to My Website" message="Thanks for visiting" />
 
       <main>
-        {/* Add Task Form */}
+        {/* Add task form */}
         <section>
           <form id="todo-form" onSubmit={handleFormSubmit}>
             <input
@@ -54,7 +52,7 @@ function App() {
           </form>
         </section>
 
-        {/* Todo List Section */}
+        {/* Todo List section */}
         <section>
           <h2>My Tasks:</h2>
           <TodoList
@@ -64,7 +62,7 @@ function App() {
           />
         </section>
 
-        {/* Card shows every task */}
+        {/* Card shows when add task */}
         <section className="cards">
           <h2>Task Cards:</h2>
           {todos.map((todo, i) => (
