@@ -91,7 +91,7 @@ header p {
   background-color: #b8794f;
 }
 
-/* Meal list and Notebook - shared grid layout */
+/* Meal list, Notebook */
 .meal-list,
 .notebook {
   display: grid;
@@ -103,7 +103,6 @@ header p {
   padding: 0 20px;
 }
 
-/* Use auto-fill for notebook to prevent cards from expanding when deleted */
 .notebook {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
