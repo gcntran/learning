@@ -16,6 +16,13 @@ function App() {
     getRandomRecipe(3).then(setRecipes);
   }, []);
 
+  // Delete recipe from Notebook function
+  function deleteFromNotebook(idMeal) {
+    const updated = notebook.filter((r) => r.idMeal !== idMeal);
+    setNotebook(updated);
+    localStorage.setItem('notebook', JSON.stringify(updated));
+  }
+  
   // Save recipe to Notebook
   function saveToNotebook(recipe) {
     const exists = notebook.find((r) => r.idMeal === recipe.idMeal);

@@ -1,7 +1,6 @@
 function Notebook({ notebook, onDelete }) {
     if (!notebook || notebook.length === 0) {
         return <p>Your Notebook is empty.</p>;
-    }
 }
 
 return (
@@ -21,7 +20,8 @@ return (
                     Delete from Notebook
                 </button>
                 </div>
-        )
-        )}
+        ))}
     </div>
-)
+);
+}
+export default Notebook;

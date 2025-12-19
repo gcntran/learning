@@ -1,47 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
     <title>Find Me Something to Cook</title>
-    <link rel="stylesheet" href="src/index.css">
-</head>
-
-<body>
-    <main>
-        <header>
-            <h1>Find Me Something to Cook</h1>
-        </header>
-
-        <!-- Search section -->
-        <div class="search-section">
-            <input type="text" id="ingredientInput" placeholder="What do you want to cook today?">
-            <div class="search-buttons">
-                <button id="searchBtn">Search</button>
-                <button id="clearBtn">Clear Results</button>
-                <button id="refreshBtn">Refresh Random Recipes</button>
-            </div>
-        </div>
-
-        <!-- Results show here -->
-        <h2>Random Recipes</h2>
-        <div id="results"></div>
-
-        <!-- Notebook for favorite recipes -->
-        <section class="notebook">
-            <h2>My Notebook</h2>
-            <p>Favorite recipes saved here</p>
-            <div id="notebook"></div>
-        </section>
-
-        <footer>
-            <p>&copy; 2025 Find Me Something to Cook by Gia Cat Nguyen Tran. A study project uses TheMealDB API.</p>
-        </footer>
-    </main>
-
-    <!--- Bundle JS for main JS here -->
-    <script src="dist/bundle.js"></script>
-</body>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
