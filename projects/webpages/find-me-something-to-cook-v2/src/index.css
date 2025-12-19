@@ -8,7 +8,7 @@
 /* Body styling */
 body {
   font-family: 'Courier New', Courier, monospace;
-  background-image: url('paper-texture.jpg');
+  background-image: url('./assets/paper-texture.jpg');
   background-size: cover;
   ;
   color: #333;
@@ -78,11 +78,11 @@ header p {
   transition: background 0.3s ease;
 }
 
-#searchBtn {
+.search-btn {
   background-color: #805436;
 }
 
-#searchBtn:hover {
+.search-btn:hover {
   background-color: #b8794f;
 }
 
@@ -90,13 +90,8 @@ header p {
   background: #888888;
 }
 
-#ingredientsInput button {
-  font-family: 'Courier New', Courier, monospace;
-  width: 170px;
-}
-
-/* Recipe cards */
-#results {
+/* Meal list (from #result) */
+.meal-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
@@ -107,11 +102,12 @@ header p {
   margin: auto;
 }
 
-#results button {
+.meal-list button {
   font-family: 'Courier New', Courier, monospace;
   width: 170px;
 }
 
+/* Recipe card */
 .recipe-card {
   display: flex;
   flex-direction: column;
@@ -172,20 +168,19 @@ header p {
 }
 
 /* Notebook section */
-#favorites,
-#notebook {
+.notebook {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-#notebook button {
+.notebook button {
   font-family: 'Courier New', Courier, monospace;
   width: 170px;
 
 }
 
-/* Spinner container */
+/* Spinner */
 .spinner {
   border: 6px solid #f3f3f3;
   border-top: 6px solid #805436;
@@ -196,17 +191,16 @@ header p {
   margin: 20px auto;
 }
 
-/* Spinner wrapper */
 .spinner-container {
   display: flex;
-  flex-direction: column; /* stack spinner and text vertically */
+  flex-direction: column;
+  /* stack spinner and text vertically */
   align-items: center;
   justify-content: center;
   text-align: center;
   margin: 20px auto;
 }
 
-/* Spinner itself */
 .spinner {
   border: 6px solid #f3f3f3;
   border-top: 6px solid #805436;
@@ -214,7 +208,7 @@ header p {
   width: 40px;
   height: 40px;
   animation: spin 1s linear infinite;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 /* Loading text */
@@ -227,24 +221,24 @@ header p {
 /* Spin animation */
 @keyframes spin {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 /* Fade-in animation */
 @keyframes fadeIn {
   from {
-      opacity: 0;
-      transform: translateY(10px);
+    opacity: 0;
+    transform: translateY(10px);
   }
 
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -252,80 +246,55 @@ header p {
 /* For tablets and smaller screens */
 @media (max-width: 1024px) {
   .search-section {
-      width: 90%;
+    width: 90%;
   }
 
-  .search-section input {
-      width: 100%;
-  }
-
-  #results {
-      width: 95%;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  .meal-list {
+    width: 95%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
   .recipe-card {
-      width: 100%;
-      max-width: 300px;
+    max-width: 300px;
   }
 }
 
-/* For mobile screens */
 @media (max-width: 600px) {
   body {
-      padding: 10px;
-      font-size: 0.9rem;
+    padding: 10px;
+    font-size: 0.9rem;
   }
 
   header h1 {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
 
-  header p {
-      font-size: 1rem;
-  }
-
-  /* Search section */
   .search-section {
-      width: 100%;
-      padding: 5px;
-  }
-
-  .search-section input {
-      width: 100%;
-      font-size: 0.9rem;
+    width: 100%;
+    padding: 5px;
   }
 
   .search-buttons {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      gap: 8px;
+    flex-direction: column;
+    width: 100%;
   }
 
   .search-buttons button {
-      width: 100%;
-      font-size: 0.9rem;
+    width: 100%;
   }
 
-  /* Recipe cards */
-  #results {
-      grid-template-columns: 1fr;
-      width: 100%;
+  .meal-list {
+    grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .recipe-card {
-      width: 100%;
-      max-width: 100%;
-      margin: 10px 0;
+    width: 100%;
+    margin: 10px 0;
   }
 
   .recipe-card h3 {
-      font-size: 1rem;
-      height: auto;
-  }
-
-  .recipe-card img {
-      max-width: 100%;
+    font-size: 1rem;
+    height: auto;
   }
 }

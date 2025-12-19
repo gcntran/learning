@@ -1,33 +1,36 @@
 import { useEffect, useState } from 'react'
-import { getRandomRecipe, getRecipesByIngredient } from './api'
+import { getRandomRecipes, getRecipesByIngredient } from './api'
 import MealList from './components/MealList'
 import Notebook from './components/Notebook'
 
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [notebook, setNotebook] = useState(
-    JSON.parse(localStorage.getItem('notebook')) || []);
+    JSON.parse(localStorage.getItem('notebook')) || []
+  );
 
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
 
   // Load random recipes on page load
   useEffect(() => {
-    getRandomRecipe(3).then(setRecipes);
+    getRandomRecipes(3).then((data) => {
+      setRecipes(Array.isArray(data) ? data : []);
+    });
   }, []);
 
-  // Delete recipe from Notebook function
+  // Delete recipe from Notebook
   function deleteFromNotebook(idMeal) {
     const updated = notebook.filter((r) => r.idMeal !== idMeal);
     setNotebook(updated);
     localStorage.setItem('notebook', JSON.stringify(updated));
   }
-  
+
   // Save recipe to Notebook
   function saveToNotebook(recipe) {
     const exists = notebook.find((r) => r.idMeal === recipe.idMeal);
     if (exists) {
-      alert('${recipe.strMeal} is already in your notebook.');
+      alert(`${recipe.strMeal} is already in your notebook.`);
       return;
     }
 
@@ -42,8 +45,10 @@ function App() {
 
     setLoading(true);
     const result = await getRecipesByIngredient(query);
+
     setTimeout(() => {
-      setRecipes(result?.slice(0, 3) || []);
+      const limited = Array.isArray(result) ? result.slice(0, 3) : [];
+      setRecipes(limited);
       setLoading(false);
     }, 2000);
   }
@@ -54,14 +59,14 @@ function App() {
 
       <input
         type="text"
-        placeholder='Enter an ingredient (e.g., chicken)'
+        placeholder="Enter an ingredient (e.g., chicken)"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
 
       <button onClick={handleSearch}>Search</button>
       <button onClick={() => setRecipes([])}>Clear</button>
-      <button onClick={() => getRandomRecipe(3).then(setRecipes)}>Refresh</button>
+      <button onClick={() => getRandomRecipes(3).then(setRecipes)}>Refresh</button>
 
       {loading ? (
         <div className="spinner-container">
@@ -78,5 +83,4 @@ function App() {
   );
 }
 
-
-export default App
+export default App;
