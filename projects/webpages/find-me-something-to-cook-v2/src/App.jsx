@@ -82,6 +82,7 @@ function App() {
       )}
 
       <h2>Your Notebook</h2>
+      <h3>Your favorite recipes will be saved here</h3>
       <Notebook notebook={notebook} onDelete={deleteFromNotebook} />
     </div>
   );
