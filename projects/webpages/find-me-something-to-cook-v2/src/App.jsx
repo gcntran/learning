@@ -76,7 +76,11 @@ function App() {
 
   return (
     <div>
+
+      {/* Header */}
       <h1>Find Me Something to Cook</h1>
+      <p className="instruction-text">
+        📌 Instruction: Type the ingredient, random recipes will appear. You can view the recipe and click outside the recipe pop-up to close it (or click the "x" button). You can add your favorite recipes to the Notebook section and delete any recipe you don't want.</p>
 
       {/* Recipe Modal */}
       {selectedRecipe && (
@@ -131,6 +135,7 @@ function App() {
         onView={(recipe) => setSelectedRecipe(recipe)}
       />
 
+      {/* Footer */}
       <footer>
         <p>
           &copy; 2025 Find Me Something to Cook by Gia Cat Nguyen Tran.
