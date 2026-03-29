@@ -20,17 +20,16 @@ A simple, cozy recipe‑finding web app built with React, Vite, and TheMealDB AP
 
 ## Structure
 src/
-│── components/
-│     ├── MealCard.jsx
-│     ├── MealList.jsx
-│     ├── Notebook.jsx
-│     ├── RecipeModal.jsx
-│
-│── App.css
-│── App.jsx
-│── api.js
-│── index.css
-│── main.jsx
+components/
+  MealCard.jsx
+  MealList.jsx
+  Notebook.jsx
+  RecipeModal.jsx
+App.css
+App.jsx
+api.js
+index.css
+main.jsx
 
 ## How to run the project
 npm install
