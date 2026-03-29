@@ -1,16 +1,19 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Find Me Something to Cook
+A simple, cozy recipe‑finding web app built with React, Vite, and TheMealDB API. Users can search for meals, view detailed recipes in a modal, and save their favorites to a personal notebook. The app features playful torn‑paper styling, clean components, and Toastify alerts for a more polished experience.
+---
+🌿 Features
+- Search for meals using TheMealDB API
+- Meal cards displaying thumbnails and basic info
+- Recipe modal with ingredients + instructions
+- Notebook to save favourite meals
+- Toast notifications for actions (save, remove, errors)
+- Torn‑paper aesthetic for a cozy, scrapbook‑like feel
+- Component‑based architecture using React
+- Built with Vite for fast development
+---
+🛠️ Tech Stack
+- React (functional components, hooks)
+- Vite
+- TheMealDB API
+- Toastify for alerts
+- CSS for global styling
