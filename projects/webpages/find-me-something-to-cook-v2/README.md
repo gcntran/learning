@@ -17,23 +17,27 @@ A simple, cozy recipe‑finding web app built with React, Vite, and TheMealDB AP
 - TheMealDB API
 - Toastify for alerts
 - CSS for global styling
-
+---
 ## Structure
+<pre>
 src/
-components/
-  MealCard.jsx
-  MealList.jsx
-  Notebook.jsx
-  RecipeModal.jsx
-App.css
-App.jsx
-api.js
-index.css
-main.jsx
-
+├── components/
+│   ├── MealCard.jsx
+│   ├── MealList.jsx
+│   ├── Notebook.jsx
+│   └── RecipeModal.jsx
+├── App.css
+├── App.jsx
+├── api.js
+├── index.css
+└── main.jsx
+  </pre>
+---
 ## How to run the project
+<pre>
 npm install
 npm run dev
-
+</pre>
+---
 ## About the Project
 This project was created as part of my coursework at Saskatchewan Polytechnic. It builds on my earlier recipe‑finder assignment, but reimagines it with modern tools, cleaner architecture, and a more polished user experience. I loved bringing personality into the UI through the torn‑paper styling and seeing the app come to life in React.
