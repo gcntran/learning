@@ -1,3 +1,3 @@
 # learning
-Author: Gia Cat Nguyen Tran
-Date: November 5, 2025
+- Author: Gia Cat Nguyen Tran
+- Date: November 5, 2025
